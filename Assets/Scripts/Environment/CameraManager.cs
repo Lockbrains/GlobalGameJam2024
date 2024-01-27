@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,48 +9,53 @@ public class CameraManager : MonoBehaviour
 {
     public static CameraManager instance;
 
+    [Header("Rendering Image")]
     public RawImage image;
     public Camera myCamera;
-    
-    
+
+    [Header("Virtual Cameras")] 
+    [SerializeField] private CinemachineVirtualCamera[] virtualCameras;
+
+    [SerializeField] private CinemachineVirtualCamera _initialCam;
+    private int _curPriority;
     
     private void Awake()
     {
         instance = this;
+        _curPriority = 1;
     }
 
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(_initialCam != null) RefreshCamPriority();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //int ratio = 1;
-        //Rect rect = new Rect(0, 0, (int)Screen.width / ratio, (int)Screen.height / ratio);
         
-        //image.texture = ShowScreen(myCamera, rect);
     }
-    
-    public Texture2D ShowScreen(Camera camera, Rect rect)
+
+    private void RefreshCamPriority()
     {
-        RenderTexture rt = new RenderTexture((int)rect.width, (int)rect.height, 0);
-        camera.targetTexture = rt;
-        camera.Render();
+        foreach (var cam in virtualCameras)
+        {
+            cam.Priority = 0;
+        }
 
-        RenderTexture.active = rt;
-        Texture2D screenShot = new Texture2D((int)rect.width, (int)rect.height, TextureFormat.RGB24, false);
+        _initialCam.Priority = 1;
+    }
 
-        screenShot.ReadPixels(rect, 0, 0);
-        screenShot.Apply();
+    private void SetPrioritizedCam(CinemachineVirtualCamera cam)
+    {
+        _curPriority++;
+        cam.Priority = _curPriority;
+    }
 
-        camera.targetTexture = null;
-        RenderTexture.active = null;
-
-        GameObject.Destroy(rt);
-        return screenShot;
+    public void StartGame()
+    {
+        SetPrioritizedCam(virtualCameras[1]);
     }
 }
