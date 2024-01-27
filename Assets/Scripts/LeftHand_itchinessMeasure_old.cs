@@ -1,25 +1,25 @@
 
 using UnityEngine;
 
-public class RightHand_itchinessMeasure : MonoBehaviour
+public class LeftHand_itchinessMeasure_old : MonoBehaviour
 {
     // Apply this script on both left and right hand
 
     // Drag parent's script to this var
     public PlayerGlobalVar PlayerGlobalVar; //totalItchiness, numOfItchPoint, currentSen, lowSen, midSen, highSen
-    public float rightHandCurrentSen = 0;
-    public LeftHand_itchinessMeasure left;
+    public float leftHandCurrentSen = 0;
+    public RightHand_itchinessMeasure right;
 
 
     private void OnTriggerEnter(Collider other)
     {
         if (PlayerGlobalVar.itchiness.ContainsKey(other.tag))
         {
-            rightHandCurrentSen = PlayerGlobalVar.itchiness[other.tag];
+            leftHandCurrentSen = PlayerGlobalVar.itchiness[other.tag];
 
             // In case the next itchy point has a different itchiness
             //PlayerGlobalVar.currentSen = Mathf.Max(PlayerGlobalVar.currentSen, PlayerGlobalVar.itchiness[other.tag]);
-            PlayerGlobalVar.currentSen = Mathf.Max(left.leftHandCurrentSen, rightHandCurrentSen);
+            PlayerGlobalVar.currentSen = Mathf.Max(right.rightHandCurrentSen, leftHandCurrentSen);
 
             // if player is not intersecting with any itchy point
             if (PlayerGlobalVar.numOfItchPoint == 0)
@@ -39,8 +39,8 @@ public class RightHand_itchinessMeasure : MonoBehaviour
     {
         if (PlayerGlobalVar.itchiness.ContainsKey(other.tag))
         {
-            rightHandCurrentSen = 0f;
-            PlayerGlobalVar.currentSen = Mathf.Max(left.leftHandCurrentSen, rightHandCurrentSen);
+            leftHandCurrentSen = 0f;
+            PlayerGlobalVar.currentSen = Mathf.Max(right.rightHandCurrentSen, leftHandCurrentSen);
 
             // if player is only intersecting with one itchy point
             if (PlayerGlobalVar.numOfItchPoint == 1)
