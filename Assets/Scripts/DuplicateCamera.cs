@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[ExecuteInEditMode]
 public class DuplicateCamera : MonoBehaviour
 {
     [SerializeField] private Camera _originCam;
