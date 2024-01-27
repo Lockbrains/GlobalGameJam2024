@@ -17,7 +17,14 @@ public class CameraManager : MonoBehaviour
     [SerializeField] private CinemachineVirtualCamera[] virtualCameras;
 
     [SerializeField] private CinemachineVirtualCamera _initialCam;
+
+    [Header("Noise Profile Assets")] 
+    [SerializeField] private NoiseSettings _6DShake;
+    [SerializeField] private NoiseSettings _Handheld;
+    [SerializeField] private float shakeDuration;
+    
     private int _curPriority;
+    private CinemachineVirtualCamera _curCam;
     
     private void Awake()
     {
@@ -35,9 +42,18 @@ public class CameraManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        TestCamera();
     }
 
+
+    private void TestCamera()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            ShakeCamera();
+        }
+    }
+    
     private void RefreshCamPriority()
     {
         foreach (var cam in virtualCameras)
@@ -52,10 +68,25 @@ public class CameraManager : MonoBehaviour
     {
         _curPriority++;
         cam.Priority = _curPriority;
+        _curCam = cam;
     }
 
     public void StartGame()
     {
         SetPrioritizedCam(virtualCameras[1]);
+    }
+
+    public void ShakeCamera()
+    {
+        StartCoroutine(TriggerShake());
+    }
+
+    private IEnumerator TriggerShake()
+    {
+        CinemachineBasicMultiChannelPerlin
+            noise = _curCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+        noise.m_NoiseProfile = _6DShake;
+        yield return new WaitForSeconds(shakeDuration);
+        noise.m_NoiseProfile = _Handheld;
     }
 }
