@@ -16,7 +16,7 @@ public class PlayerGlobalVar : MonoBehaviour
 
 
 
-    // Dummy variables, simply interfaces for designer
+    // Dummy variables: simply having an interfaces for designer to manipulate the value
     public float maxItchiness = 100;
     public float lowSen = 5, midSen = 10, highSen = 15;
 
@@ -34,6 +34,7 @@ public class PlayerGlobalVar : MonoBehaviour
 
     public void StartAddItchinenss()
     {
+        //StartCoroutine() must store in a variable, otherwise won't stop with StopCoroutine()
         controller = StartCoroutine(AddItchiness());
     }
 
