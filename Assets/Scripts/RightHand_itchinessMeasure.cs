@@ -5,7 +5,7 @@ public class RightHand_itchinessMeasure : MonoBehaviour
 {
     // Apply this script on right hand
 
-    // Drag parent's script to this var
+    // Draback: one hand cannot 
     public PlayerGlobalVar PlayerGlobalVar;
     public float rightHandCurrentSen = 0;
     public LeftHand_itchinessMeasure left;
