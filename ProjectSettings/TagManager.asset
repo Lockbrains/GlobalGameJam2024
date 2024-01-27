@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - lowSen
+  - midSen
+  - highSen
   layers:
   - Default
   - TransparentFX
