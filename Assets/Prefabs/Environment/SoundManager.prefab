@@ -49,6 +49,8 @@ MonoBehaviour:
   snd_laugh_weak: {fileID: 7187511804082204082, guid: 8764c5e5171ab174aa070effffdd19e0, type: 3}
   snd_laugh_mild: {fileID: 6026158168048974462, guid: f7f289ca2beaa8b4899ba45736cf877c, type: 3}
   snd_laugh_wild: {fileID: 362655649419304380, guid: 6a461ae8ec5abfe4e8dd283f15b56a0b, type: 3}
+  firstClip: {fileID: 8300000, guid: fde6203c11d8add4d8aabc5257596898, type: 3}
+  loopedClip: {fileID: 8300000, guid: abd66591f6575ec4493d0692c174bc1e, type: 3}
 --- !u!82 &7849704180890652487
 AudioSource:
   m_ObjectHideFlags: 0
@@ -59,7 +61,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5232983a94130794196ad0be138b6027, type: 3}
+  m_audioClip: {fileID: 8300000, guid: fde6203c11d8add4d8aabc5257596898, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1

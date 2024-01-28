@@ -16,6 +16,10 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private GameObject snd_laugh_mild;
     [SerializeField] private GameObject snd_laugh_wild;
     
+    [Header("AudioClip")]
+    public AudioClip firstClip;         // 首先播放的AudioClip
+    public AudioClip loopedClip;        // 播放完第一个后要循环的AudioClip
+    
     private void Awake()
     {
         instance = this;
@@ -24,7 +28,9 @@ public class SoundManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        as_BGM.clip = firstClip;
+        as_BGM.Play();
+        StartCoroutine(WaitAndLoop());
     }
 
     // Update is called once per frame
@@ -39,6 +45,15 @@ public class SoundManager : MonoBehaviour
         Destroy(s, 5f);
     }
 
+    IEnumerator WaitAndLoop()
+    {
+        yield return new WaitForSeconds(firstClip.length);
+
+        as_BGM.clip = loopedClip;
+        as_BGM.loop = true;
+        as_BGM.Play();
+    }
+    
     private void MakeSoundAt(GameManager sfx, Transform t)
     {
         GameManager s = Instantiate(sfx, t);
