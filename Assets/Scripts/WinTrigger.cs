@@ -9,6 +9,7 @@ public class WinTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("You Win! HAHA!");
+            GameManager.instance.state = GameManager.GameState.Victory;
             //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }

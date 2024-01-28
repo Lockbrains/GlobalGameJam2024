@@ -11,6 +11,7 @@ public class GUIManager : MonoBehaviour
     [SerializeField] private GameObject screen_Title;
     [SerializeField] private GameObject screen_MainUI;
     [SerializeField] private GameObject screen_PauseUI;
+    [SerializeField] private GameObject screen_VictoryUI;
     
     private void Awake()
     {
@@ -22,13 +23,7 @@ public class GUIManager : MonoBehaviour
     {
         RefreshCamera();   
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    
     public void TurnOffTitle()
     {
         screen_Title.SetActive(false);
@@ -39,5 +34,6 @@ public class GUIManager : MonoBehaviour
         screen_Title.SetActive(GameManager.instance.state == GameManager.GameState.Title);
         screen_MainUI.SetActive(GameManager.instance.state == GameManager.GameState.InGame);
         screen_PauseUI.SetActive(GameManager.instance.state == GameManager.GameState.Pause);
+        screen_VictoryUI.SetActive(GameManager.instance.state == GameManager.GameState.Victory); 
     }
 }
