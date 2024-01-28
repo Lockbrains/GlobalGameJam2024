@@ -10,6 +10,7 @@ public class WinTrigger : MonoBehaviour
         {
             Debug.Log("You Win! HAHA!");
             GameManager.instance.state = GameManager.GameState.Victory;
+            GUIManager.instance.RefreshCamera();
             //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }

@@ -55,7 +55,15 @@ public class ItchyManager : MonoBehaviour
             _newRegion = false;
         }
 
-        _timer += Time.deltaTime * sensitivity;
+        float playerHeight = playerTransform.position.y;
+        if (playerHeight > 70.0f && playerHeight < 95.0f)
+        {
+            _timer += Time.deltaTime * sensitivity * 0.4f;
+        }
+        else
+        {
+            _timer += Time.deltaTime * sensitivity;
+        }
         CheckItchy();
         CheckHeight();
     }
@@ -74,17 +82,17 @@ public class ItchyManager : MonoBehaviour
         else if (heightReached < lv2Height)
         {
             //Debug.LogWarning("Lv1 Height, sensitivity Inc 1x!");
-            sensitivity = defaultSensitivity + 1 * sensitivityInc;
+            sensitivity = defaultSensitivity * sensitivityInc;
         }
         else if (heightReached < lv3Height)
         {
             //Debug.LogWarning("Lv2 Height, sensitivity Inc 2x!");
-            sensitivity = defaultSensitivity + 2 * sensitivityInc;
+            sensitivity = defaultSensitivity * sensitivityInc * sensitivityInc;
         }
         else //heightReached >= lv3Height)
         {
             //Debug.LogWarning("Lv3 Height, sensitivity Inc 3x!");
-            sensitivity = defaultSensitivity + 3 * sensitivityInc;
+            sensitivity = defaultSensitivity * sensitivityInc * sensitivityInc * sensitivityInc;
         }
 
     }
