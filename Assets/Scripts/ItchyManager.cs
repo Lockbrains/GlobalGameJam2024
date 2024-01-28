@@ -85,14 +85,19 @@ public class ItchyManager : MonoBehaviour
             _timer = 0.0f;
             _itchy1 = false;
             _itchy2 = false;
+            CameraManager.instance.ShakeCamera();
+            SoundManager.instance.MakeLaughSnd(2);
         } else if (!_itchy2 && _timer > lv2Itchy)
         {
             Debug.LogWarning("Lv2 Reached!!!");
             _itchy2 = true;
+            CameraManager.instance.ShakeCamera();
+            SoundManager.instance.MakeLaughSnd(0);
         } else if (!_itchy1 && _timer > lv1Itchy)
         {
             Debug.LogWarning("Lv1 Reached!!!");
             _itchy1 = true;
+            SoundManager.instance.StopSnore();
         }
     }
     

@@ -10,6 +10,7 @@ public class SoundManager : MonoBehaviour
 
     [Header("Audio Sources")] 
     [SerializeField] private AudioSource as_BGM;
+    [SerializeField] private AudioSource as_Snore;
     
     [Header("Prefabs")] 
     [SerializeField] private GameObject snd_laugh_weak;
@@ -82,5 +83,17 @@ public class SoundManager : MonoBehaviour
                 MakeSound(snd_laugh_wild);
                 break;
         }
+    }
+
+    public void StopSnore()
+    {
+        StartCoroutine(StopSnoreAnim());
+    }
+
+    private IEnumerator StopSnoreAnim()
+    {
+        as_Snore.Pause();
+        yield return new WaitForSeconds(3f);
+        as_Snore.Play();
     }
 }

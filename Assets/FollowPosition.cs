@@ -10,6 +10,6 @@ public class FollowPosition : MonoBehaviour
     void Update()
     {
         Vector3 curPos = transform.position;
-        transform.position = new Vector3(curPos.x, followAt.position.y, curPos.z);
+        transform.position = new Vector3(followAt.position.x, followAt.position.y, followAt.position.z -20f);
     }
 }

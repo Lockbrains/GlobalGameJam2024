@@ -286,6 +286,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4823091084791693664, guid: 54d8f17b9032f8b498eaf755480cd9de, type: 3}
   m_PrefabInstance: {fileID: 1211543358}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &62907818 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7898018764453414557, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
+  m_PrefabInstance: {fileID: 2043610272}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &62907823
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62907818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 46965f9cbaf525742a6da4c2172a99cd, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 1
+  m_FrequencyGain: 1
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &85823888
 GameObject:
   m_ObjectHideFlags: 0
@@ -1896,7 +1918,7 @@ AudioSource:
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1.98
+  DopplerLevel: 0
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
@@ -5289,6 +5311,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7898018764453414557, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 62907823}
     - targetCorrespondingSourceObject: {fileID: 8502461148228143904, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1849889999}
@@ -5529,6 +5554,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1710797079}
     m_Modifications:
+    - target: {fileID: 600541642069765311, guid: 0b65251a78914694eaa93c23ce18a339, type: 3}
+      propertyPath: as_Snore
+      value: 
+      objectReference: {fileID: 709161540}
     - target: {fileID: 3850386090853152796, guid: 0b65251a78914694eaa93c23ce18a339, type: 3}
       propertyPath: m_Name
       value: SoundManager

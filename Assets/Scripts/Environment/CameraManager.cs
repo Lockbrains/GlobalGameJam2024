@@ -39,12 +39,6 @@ public class CameraManager : MonoBehaviour
         if(_initialCam != null) RefreshCamPriority();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        TestCamera();
-    }
-
 
     private void TestCamera()
     {
