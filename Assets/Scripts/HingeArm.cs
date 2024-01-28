@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class HingeArm : MonoBehaviour
@@ -24,6 +25,8 @@ public class HingeArm : MonoBehaviour
 
     [SerializeField] private LayerMask raycastLayerMask;
     [SerializeField] private float zValueCorrectionForce = 10;
+
+    private float _paralyzeTimer = -1.0f;
     
     private void Awake()
     {
@@ -40,9 +43,14 @@ public class HingeArm : MonoBehaviour
 
     private void Update()
     {
-        Grip();
+        if (_paralyzeTimer >= 0.0f)
+        {
+            _paralyzeTimer -= Time.deltaTime;
+            return;
+        }
         MoveHandToSurface();
-        
+        Grip();
+
         if (!_leftGrip)
             _leftHandRb.AddForceAtPosition(
                 Vector3.Normalize(new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0.0f)) * armForce, 
@@ -56,6 +64,11 @@ public class HingeArm : MonoBehaviour
                 rightHand.transform.position + rightHand.transform.right);
         else 
             _bodyRb.AddForce(new Vector3(Input.GetAxis("Horizontal2"), Input.GetAxis("Vertical2"), 0.0f) * armForce);
+    }
+
+    public void Paralyze()
+    {
+        _paralyzeTimer = 2.5f;
     }
 
     private void MoveHandToSurface()
