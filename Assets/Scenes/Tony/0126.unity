@@ -5536,15 +5536,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2945796970558649138, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
       propertyPath: lv1Itchy
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2945796970558649138, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
       propertyPath: lv2Itchy
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2945796970558649138, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
       propertyPath: lv3Itchy
-      value: 25
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2945796970558649138, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
       propertyPath: lv1Height
