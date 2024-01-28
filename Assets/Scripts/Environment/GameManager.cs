@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
     {
         if (Input.anyKeyDown)
         {
-            state = GameState.InGame;
+            //state = GameState.InGame;
             GUIManager.instance.RefreshCamera();
             CameraManager.instance.StartGame();
         }

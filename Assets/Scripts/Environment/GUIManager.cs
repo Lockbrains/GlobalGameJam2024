@@ -29,6 +29,11 @@ public class GUIManager : MonoBehaviour
         
     }
 
+    public void TurnOffTitle()
+    {
+        screen_Title.SetActive(false);
+    }
+
     public void RefreshCamera()
     {
         screen_Title.SetActive(GameManager.instance.state == GameManager.GameState.Title);

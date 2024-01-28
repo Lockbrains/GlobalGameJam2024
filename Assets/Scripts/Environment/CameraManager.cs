@@ -67,9 +67,20 @@ public class CameraManager : MonoBehaviour
 
     public void StartGame()
     {
-        SetPrioritizedCam(virtualCameras[1]);
+        StartCoroutine(StartGameFlow());
     }
 
+    private IEnumerator StartGameFlow()
+    {
+        GUIManager.instance.TurnOffTitle();
+        SetPrioritizedCam(virtualCameras[2]);
+        yield return new WaitForSeconds(5f);
+        SetPrioritizedCam(virtualCameras[1]);
+        GameManager.instance.state = GameManager.GameState.InGame;
+        GUIManager.instance.RefreshCamera();
+
+    }
+    
     public void ShakeCamera()
     {
         StartCoroutine(TriggerShake());
