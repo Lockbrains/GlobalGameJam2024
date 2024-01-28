@@ -5331,6 +5331,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38bc597b4fcdcb840984712ef154ee43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1849890000 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7810038866930283045, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
+  m_PrefabInstance: {fileID: 2043610272}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1869803792 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5108880389824205288, guid: fd47269cdeb705849b8205d554a811c7, type: 3}
@@ -5539,7 +5544,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2945796970558649138, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
       propertyPath: lv3Itchy
-      value: 30
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 2945796970558649138, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
       propertyPath: lv1Height
@@ -5559,11 +5564,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2945796970558649138, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
       propertyPath: startUpTime
-      value: 6
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2945796970558649138, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 1849890000}
+    - target: {fileID: 2945796970558649138, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
+      propertyPath: defaultSensitivity
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2945796970558649138, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
       propertyPath: displacementRequired
-      value: 1.5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7828130657704752772, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
       propertyPath: m_LocalPosition.x

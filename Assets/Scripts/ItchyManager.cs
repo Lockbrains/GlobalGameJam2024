@@ -37,7 +37,7 @@ public class ItchyManager : MonoBehaviour
 
     private void Start()
     {
-        initialHeight = transform.position.y;
+        initialHeight = playerTransform.position.z;
         sensitivity = defaultSensitivity;
     }
     private void Update()
@@ -63,7 +63,7 @@ public class ItchyManager : MonoBehaviour
     private void CheckHeight()
     {
 
-        float heightReached = transform.position.y - initialHeight;
+        float heightReached = playerTransform.position.z - initialHeight;
         //Debug.Log(heightReached);
         
         if (heightReached < lv1Height)
@@ -91,6 +91,7 @@ public class ItchyManager : MonoBehaviour
 
     private void CheckItchy()
     {
+        // Jesse: i change the playerTransform from FishmanSeperatev02 to fishmanBody_geo, for somehow, the former one does not change in Transform
         float displacement = Vector3.Magnitude(_lastPos - playerTransform.position);
         if (displacement >= displacementRequired)
         {
