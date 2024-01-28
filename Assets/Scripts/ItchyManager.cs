@@ -100,12 +100,12 @@ public class ItchyManager : MonoBehaviour
             _itchy1 = false;
             _itchy2 = false;
         }
-        Debug.Log(displacement);
+        Debug.Log($"timer: {_timer}, dis: {displacement}");
 
         if (_timer > lv3Itchy)
         {
             Debug.LogWarning("Lv3 Reached!!!");
-            HingeArm hingeArm = playerTransform.GetComponent<HingeArm>();
+            HingeArm hingeArm = playerTransform.parent.GetComponent<HingeArm>();
             if (hingeArm._leftGripPoint != null)
             {
                 Destroy(hingeArm._leftGripPoint);
