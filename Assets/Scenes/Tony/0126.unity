@@ -5602,6 +5602,10 @@ PrefabInstance:
       propertyPath: lv3Height
       value: 230
       objectReference: {fileID: 0}
+    - target: {fileID: 2945796970558649138, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
+      propertyPath: startUpTime
+      value: 21
+      objectReference: {fileID: 0}
     - target: {fileID: 4340103916510434331, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
       propertyPath: m_NoiseProfile
       value: 
