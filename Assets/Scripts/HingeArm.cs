@@ -22,6 +22,9 @@ public class HingeArm : MonoBehaviour
     private bool _rightGrip = false;
     private GameObject _rightGripPoint;
 
+    [SerializeField] private LayerMask raycastLayerMask;
+    [SerializeField] private float zValueCorrectionForce = 10;
+    
     private void Awake()
     {
         _leftHandRb = leftHand.GetComponent<Rigidbody>();
@@ -32,6 +35,7 @@ public class HingeArm : MonoBehaviour
     private void Update()
     {
         Grip();
+        MoveHandToSurface();
         
         if (!_leftGrip)
             _leftHandRb.AddForceAtPosition(
@@ -46,6 +50,47 @@ public class HingeArm : MonoBehaviour
                 rightHand.transform.position + rightHand.transform.right);
         else 
             _bodyRb.AddForce(new Vector3(Input.GetAxis("Horizontal2"), Input.GetAxis("Vertical2"), 0.0f) * armForce);
+    }
+
+    private void MoveHandToSurface()
+    {
+        Vector3 leftCastPoint = leftHand.transform.position - leftHand.transform.right + leftHand.transform.up * 10.0f;
+        Vector3 rightCastPint = rightHand.transform.position + rightHand.transform.right + rightHand.transform.up * 10.0f;
+
+        if (Physics.Raycast(leftCastPoint, -leftHand.transform.up, out var hitLeft, Mathf.Infinity, raycastLayerMask))
+        {
+            Debug.DrawRay(leftCastPoint, -leftHand.transform.up * hitLeft.distance, Color.yellow);
+
+            float distance = hitLeft.point.z - leftHand.transform.position.z;
+            if (Mathf.Abs(distance) >= 1.5f)
+            {
+                _leftHandRb.AddForceAtPosition(
+                    new Vector3(0.0f, 0.0f, (distance > 0.0f) ? zValueCorrectionForce : -zValueCorrectionForce), 
+                    leftHand.transform.position - leftHand.transform.right);
+            }
+                
+        }
+        else
+        {
+            Debug.LogWarning("left hand raycast hit nothing");
+        }
+        // ------------
+        if (Physics.Raycast(rightCastPint, -rightHand.transform.up, out var hitRight, Mathf.Infinity, raycastLayerMask))
+        {
+            Debug.DrawRay(rightCastPint, -rightHand.transform.up * hitLeft.distance, Color.red);
+
+            float distance = hitRight.point.z - rightHand.transform.position.z;
+            if (Mathf.Abs(distance) >= 1.5f)
+            {
+                _rightHandRb.AddForceAtPosition(
+                    new Vector3(0.0f, 0.0f, (distance > 0.0f) ? zValueCorrectionForce : -zValueCorrectionForce), 
+                rightHand.transform.position + rightHand.transform.right);
+            }
+        }
+        else
+        {
+            Debug.LogWarning("right hand raycast hit nothing");
+        }
     }
 
     private void Grip()
