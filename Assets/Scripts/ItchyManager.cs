@@ -81,6 +81,7 @@ public class ItchyManager : MonoBehaviour
             {
                 Destroy(hingeArm._rightGripPoint);
             }
+            hingeArm.Paralyze();
             _newRegion = true;
             _timer = 0.0f;
             _itchy1 = false;
