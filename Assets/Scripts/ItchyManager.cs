@@ -9,7 +9,8 @@ public class ItchyManager : MonoBehaviour
     [Header("Itchy Config")]
     [SerializeField] private float displacementRequired = 3.0f;
     // TODO: Sensitivity should increase overtime
-    [SerializeField] private float sensitivity = 1.0f;
+    [SerializeField] private float defaultSensitivity = 1.0f;
+    [SerializeField] private float sensitivity;
     [SerializeField] private float startUpTime = 6.0f;
     [SerializeField] private float lv1Height = 80.0f;
     [SerializeField] private float lv2Height = 170.0f;
@@ -17,9 +18,9 @@ public class ItchyManager : MonoBehaviour
     [SerializeField] private float sensitivityInc = 1.2f;
 
     [Header("lv Config")]
-    [SerializeField] private float lv1Itchy = 3.5f;
-    [SerializeField] private float lv2Itchy = 5.0f;
-    [SerializeField] private float lv3Itchy = 8.0f;
+    [SerializeField] private float lv1Itchy = 10f;
+    [SerializeField] private float lv2Itchy = 20f;
+    [SerializeField] private float lv3Itchy = 30f;
     
     private Vector3 _lastPos;
 
@@ -31,8 +32,14 @@ public class ItchyManager : MonoBehaviour
 
     private bool _itchy1 = false;
     private bool _itchy2 = false;
-    
 
+    private float initialHeight;
+
+    private void Start()
+    {
+        initialHeight = transform.position.y;
+        sensitivity = defaultSensitivity;
+    }
     private void Update()
     {
         if (!_started)
@@ -55,7 +62,31 @@ public class ItchyManager : MonoBehaviour
 
     private void CheckHeight()
     {
+
+        float heightReached = transform.position.y - initialHeight;
+        //Debug.Log(heightReached);
         
+        if (heightReached < lv1Height)
+        {
+            //Debug.LogWarning("Lv0 Height, default sensitivity!");
+            sensitivity = defaultSensitivity;
+        }
+        else if (heightReached < lv2Height)
+        {
+            //Debug.LogWarning("Lv1 Height, sensitivity Inc 1x!");
+            sensitivity = defaultSensitivity + 1 * sensitivityInc;
+        }
+        else if (heightReached < lv3Height)
+        {
+            //Debug.LogWarning("Lv2 Height, sensitivity Inc 2x!");
+            sensitivity = defaultSensitivity + 2 * sensitivityInc;
+        }
+        else //heightReached >= lv3Height)
+        {
+            //Debug.LogWarning("Lv3 Height, sensitivity Inc 3x!");
+            sensitivity = defaultSensitivity + 3 * sensitivityInc;
+        }
+
     }
 
     private void CheckItchy()

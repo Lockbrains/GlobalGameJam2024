@@ -480,6 +480,72 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 158797221}
   m_CullTransparentMesh: 1
+--- !u!1 &160310066
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 160310067}
+  - component: {fileID: 160310069}
+  - component: {fileID: 160310068}
+  m_Layer: 0
+  m_Name: WinTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &160310067
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160310066}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 34, y: 387.07, z: 19.8}
+  m_LocalScale: {x: 32.794674, y: 32.794674, z: 32.794674}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 292687299}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &160310068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160310066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17eb30088d957e342a2577f903068ed4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &160310069
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160310066}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &221177057
 GameObject:
   m_ObjectHideFlags: 0
@@ -991,6 +1057,7 @@ Transform:
   m_Children:
   - {fileID: 20927461}
   - {fileID: 2043610273}
+  - {fileID: 160310067}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &338480003
@@ -5450,21 +5517,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: FishmanSeperatev02
       objectReference: {fileID: 0}
+    - target: {fileID: 176888740270299907, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 214408299430028201, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
       propertyPath: armForce
       value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 2945796970558649138, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
-      propertyPath: lv1Itchy
-      value: 6
+      propertyPath: isLv2Inc
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2945796970558649138, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
-      propertyPath: lv2Itchy
+      propertyPath: lv1Itchy
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2945796970558649138, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
+      propertyPath: lv2Itchy
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2945796970558649138, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
       propertyPath: lv3Itchy
-      value: 15
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2945796970558649138, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
+      propertyPath: lv1Height
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 2945796970558649138, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
+      propertyPath: lv2Height
+      value: 170
+      objectReference: {fileID: 0}
+    - target: {fileID: 2945796970558649138, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
+      propertyPath: lv3Height
+      value: 260
       objectReference: {fileID: 0}
     - target: {fileID: 2945796970558649138, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
       propertyPath: m_Enabled
@@ -5472,7 +5559,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2945796970558649138, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
       propertyPath: startUpTime
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2945796970558649138, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
       propertyPath: displacementRequired
