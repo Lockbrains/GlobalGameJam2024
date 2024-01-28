@@ -68,6 +68,7 @@ public class ItchyManager : MonoBehaviour
             _itchy1 = false;
             _itchy2 = false;
         }
+        Debug.Log(displacement);
 
         if (_timer > lv3Itchy)
         {

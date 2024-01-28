@@ -5265,7 +5265,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214408299430028201, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
       propertyPath: armForce
-      value: 70
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 2945796970558649138, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
+      propertyPath: lv1Itchy
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2945796970558649138, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
+      propertyPath: lv2Itchy
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2945796970558649138, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
+      propertyPath: lv3Itchy
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2945796970558649138, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2945796970558649138, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
+      propertyPath: startUpTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2945796970558649138, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
+      propertyPath: displacementRequired
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7828130657704752772, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
       propertyPath: m_LocalPosition.x

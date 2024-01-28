@@ -8,7 +8,7 @@ public class DeathCheck : MonoBehaviour
 {
     private void Update()
     {
-        if (transform.position.y <= 10.0f)
+        if (transform.position.y <= 5.0f)
         {
             SceneManager.LoadScene(0);
         }
