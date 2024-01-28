@@ -15,12 +15,12 @@ public class HingeArm : MonoBehaviour
     [SerializeField] private GameObject leftHand;
     private Rigidbody _leftHandRb;
     private bool _leftGrip = false;
-    private GameObject _leftGripPoint;
+    public GameObject _leftGripPoint;
 
     [SerializeField] private GameObject rightHand;
     private Rigidbody _rightHandRb;
     private bool _rightGrip = false;
-    private GameObject _rightGripPoint;
+    public GameObject _rightGripPoint;
 
     [SerializeField] private LayerMask raycastLayerMask;
     [SerializeField] private float zValueCorrectionForce = 10;
@@ -62,7 +62,7 @@ public class HingeArm : MonoBehaviour
             Debug.DrawRay(leftCastPoint, -leftHand.transform.up * hitLeft.distance, Color.yellow);
 
             float distance = hitLeft.point.z - leftHand.transform.position.z;
-            if (Mathf.Abs(distance) >= 1.5f)
+            if (distance >= 1.5f)
             {
                 _leftHandRb.AddForceAtPosition(
                     new Vector3(0.0f, 0.0f, (distance > 0.0f) ? zValueCorrectionForce : -zValueCorrectionForce), 
