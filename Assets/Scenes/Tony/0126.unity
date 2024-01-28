@@ -5590,6 +5590,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FishmanSeperatev02
       objectReference: {fileID: 0}
+    - target: {fileID: 4340103916510434331, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
+      propertyPath: m_NoiseProfile
+      value: 
+      objectReference: {fileID: 11400000, guid: 06ab7fcb7002a2947ae9d246ae68f2a8, type: 2}
     - target: {fileID: 7828130657704752772, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 69.99
