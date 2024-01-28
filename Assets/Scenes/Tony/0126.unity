@@ -5536,15 +5536,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2945796970558649138, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
       propertyPath: lv1Itchy
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2945796970558649138, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
       propertyPath: lv2Itchy
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2945796970558649138, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
       propertyPath: lv3Itchy
-      value: 35
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 2945796970558649138, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
       propertyPath: lv1Height
@@ -5576,7 +5576,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2945796970558649138, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
       propertyPath: displacementRequired
-      value: 0.5
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7828130657704752772, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
       propertyPath: m_LocalPosition.x
