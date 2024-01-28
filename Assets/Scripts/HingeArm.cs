@@ -32,6 +32,12 @@ public class HingeArm : MonoBehaviour
         _bodyRb = body.GetComponent<Rigidbody>();
     }
 
+    private void Start()
+    {
+        LeftGrip();
+        RightGrip();
+    }
+
     private void Update()
     {
         Grip();
@@ -97,36 +103,46 @@ public class HingeArm : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.RightShift))
         {
-            _rightGrip = !_rightGrip;
-            if (_rightGrip)
-            {
-                _rightGripPoint = Instantiate(gripPointPrefab);
-                _rightGripPoint.transform.position = rightHand.transform.position + rightHand.transform.right;
-                HingeJoint joint = _rightGripPoint.GetComponent<HingeJoint>();
-                joint.axis = new Vector3(0.0f, 0.0f, 1.0f);
-                joint.connectedBody = _rightHandRb;
-            }
-            else
-            {
-                Destroy(_rightGripPoint);
-            }
+            RightGrip();
         }
         
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            _leftGrip = !_leftGrip;
-            if (_leftGrip)
-            {
-                _leftGripPoint = Instantiate(gripPointPrefab);
-                _leftGripPoint.transform.position = leftHand.transform.position - leftHand.transform.right;
-                HingeJoint joint = _leftGripPoint.GetComponent<HingeJoint>();
-                joint.axis = new Vector3(0.0f, 0.0f, 1.0f);
-                joint.connectedBody = _leftHandRb;
-            }
-            else
-            {
-                Destroy(_leftGripPoint);
-            }
+            LeftGrip();
+        }
+    }
+
+    private void LeftGrip()
+    {
+        _leftGrip = !_leftGrip;
+        if (_leftGrip)
+        {
+            _leftGripPoint = Instantiate(gripPointPrefab);
+            _leftGripPoint.transform.position = leftHand.transform.position - leftHand.transform.right;
+            HingeJoint joint = _leftGripPoint.GetComponent<HingeJoint>();
+            joint.axis = new Vector3(0.0f, 0.0f, 1.0f);
+            joint.connectedBody = _leftHandRb;
+        }
+        else
+        {
+            Destroy(_leftGripPoint);
+        }
+    }
+
+    private void RightGrip()
+    {
+        _rightGrip = !_rightGrip;
+        if (_rightGrip)
+        {
+            _rightGripPoint = Instantiate(gripPointPrefab);
+            _rightGripPoint.transform.position = rightHand.transform.position + rightHand.transform.right;
+            HingeJoint joint = _rightGripPoint.GetComponent<HingeJoint>();
+            joint.axis = new Vector3(0.0f, 0.0f, 1.0f);
+            joint.connectedBody = _rightHandRb;
+        }
+        else
+        {
+            Destroy(_rightGripPoint);
         }
     }
 

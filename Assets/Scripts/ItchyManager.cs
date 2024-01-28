@@ -89,7 +89,6 @@ public class ItchyManager : MonoBehaviour
         {
             Debug.LogWarning("Lv2 Reached!!!");
             _itchy2 = true;
-            CameraManager.instance.ShakeCamera();
         } else if (!_itchy1 && _timer > lv1Itchy)
         {
             Debug.LogWarning("Lv1 Reached!!!");
