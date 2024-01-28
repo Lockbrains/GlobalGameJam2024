@@ -15,8 +15,7 @@ Material:
   - N_F_O_ON
   - N_F_RELGI_ON
   - N_F_SS_ON
-  m_InvalidKeywords:
-  - NOKEWO
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -214,10 +213,10 @@ Material:
     - _SelfLitPower: 2
     - _SelfShadowAffectedByLightShadowStrength: 0
     - _SelfShadowHardness: 1
-    - _SelfShadowRealTimeShadowColorPower: 1
-    - _SelfShadowRealtimeShadowIntensity: 1
+    - _SelfShadowRealTimeShadowColorPower: 1.18
+    - _SelfShadowRealtimeShadowIntensity: 0.874
     - _SelfShadowShadowTAtViewDirection: 0
-    - _SelfShadowThreshold: 0.877
+    - _SelfShadowThreshold: 0.906
     - _ShadowColorTexturePower: 0
     - _ShadowHardness: 1
     - _ShadowTColorPower: 1
