@@ -460,7 +460,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddeaea10a53f8bd4cb9b5a6b92527ded, type: 3}
---- !u!1001 &2190238433328043885
+--- !u!1001 &5313302109400597057
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -468,61 +468,61 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5859973273600912797, guid: f053813494fd4044fb8ef9759c8c1979, type: 3}
+    - target: {fileID: 176888740270299907, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
+      propertyPath: m_Name
+      value: FishmanSeperatev02
+      objectReference: {fileID: 0}
+    - target: {fileID: 7828130657704752772, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.4
       objectReference: {fileID: 0}
-    - target: {fileID: 5859973273600912797, guid: f053813494fd4044fb8ef9759c8c1979, type: 3}
+    - target: {fileID: 7828130657704752772, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
       propertyPath: m_LocalPosition.y
       value: 251.2
       objectReference: {fileID: 0}
-    - target: {fileID: 5859973273600912797, guid: f053813494fd4044fb8ef9759c8c1979, type: 3}
+    - target: {fileID: 7828130657704752772, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
       propertyPath: m_LocalPosition.z
       value: -74.9
       objectReference: {fileID: 0}
-    - target: {fileID: 5859973273600912797, guid: f053813494fd4044fb8ef9759c8c1979, type: 3}
+    - target: {fileID: 7828130657704752772, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.7071068
       objectReference: {fileID: 0}
-    - target: {fileID: 5859973273600912797, guid: f053813494fd4044fb8ef9759c8c1979, type: 3}
+    - target: {fileID: 7828130657704752772, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0.7071068
       objectReference: {fileID: 0}
-    - target: {fileID: 5859973273600912797, guid: f053813494fd4044fb8ef9759c8c1979, type: 3}
+    - target: {fileID: 7828130657704752772, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5859973273600912797, guid: f053813494fd4044fb8ef9759c8c1979, type: 3}
+    - target: {fileID: 7828130657704752772, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 5859973273600912797, guid: f053813494fd4044fb8ef9759c8c1979, type: 3}
+    - target: {fileID: 7828130657704752772, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5859973273600912797, guid: f053813494fd4044fb8ef9759c8c1979, type: 3}
+    - target: {fileID: 7828130657704752772, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5859973273600912797, guid: f053813494fd4044fb8ef9759c8c1979, type: 3}
+    - target: {fileID: 7828130657704752772, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6895377426274172677, guid: f053813494fd4044fb8ef9759c8c1979, type: 3}
-      propertyPath: m_Name
-      value: FishmanSeperatev02
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f053813494fd4044fb8ef9759c8c1979, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 01d47b5811aacf84ab14246696960bb7, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1711740687}
   - {fileID: 634134869}
-  - {fileID: 2190238433328043885}
+  - {fileID: 5313302109400597057}
   - {fileID: 925842326}
   - {fileID: 1890030749}
