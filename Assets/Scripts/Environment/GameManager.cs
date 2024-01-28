@@ -78,6 +78,7 @@ public class GameManager : MonoBehaviour
     public void BackToGame()
     {
         state = GameState.InGame;
+        Time.timeScale = 1.0f;
         GUIManager.instance.RefreshCamera();
     }
 
