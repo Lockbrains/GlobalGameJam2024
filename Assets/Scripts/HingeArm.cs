@@ -51,18 +51,18 @@ public class HingeArm : MonoBehaviour
         MoveHandToSurface();
         Grip();
 
-        if (!_leftGrip)
+        if (!_leftGrip && _rightGrip)
             _leftHandRb.AddForceAtPosition(
                 Vector3.Normalize(new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0.0f)) * armForce, 
                 leftHand.transform.position - leftHand.transform.right);
-        else
+        else if (_leftGrip)
             _bodyRb.AddForce(new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0.0f) * armForce);
         
-        if (!_rightGrip)
+        if (!_rightGrip && _leftGrip)
             _rightHandRb.AddForceAtPosition(
                 Vector3.Normalize(new Vector3(Input.GetAxis("Horizontal2"), Input.GetAxis("Vertical2"), 0.0f)) * armForce, 
                 rightHand.transform.position + rightHand.transform.right);
-        else 
+        else if (_rightGrip)
             _bodyRb.AddForce(new Vector3(Input.GetAxis("Horizontal2"), Input.GetAxis("Vertical2"), 0.0f) * armForce);
     }
 
